@@ -1,3 +1,4 @@
+/* Declared Variables */
 const edit = document.getElementById("edit");
 const popup = document.getElementById("popup");
 const close = document.getElementById("close");
@@ -15,15 +16,17 @@ const preview = document.getElementById("preview");
 
 
 
-
+/* Event listener & Functions for edit button. */
 edit.addEventListener("click", function() {
     popup.style.display = "flex";
 });
 
+/* Event Listener & Function to close first popup(Details). */
 close.addEventListener("click", function() {
     popup.style.display = "none";
 })
 
+/* Event Listener & Function when clicked on Preview button. */
 preview.addEventListener("click", function() {
     popup.style.display = "none";
     document.getElementById("company-name").innerHTML = company_name.value;
@@ -42,28 +45,32 @@ preview.addEventListener("click", function() {
     
 });
 
+/* Event listener & Function to show popup for searching logo. */
 document.getElementById("search-popup").addEventListener("click", function() {
     document.getElementById("open_logo").style.display = "flex";
 })
 
+/* Event listener & Function when logo is selected. */
 document.getElementById("logo-select").addEventListener("click", function() {
     document.getElementById("logo1").src = document.getElementById("logo-select").src;
     document.getElementById("logo2").src = document.getElementById("logo-select").src;
     document.getElementById("open_logo").style.display = "none";
 });
 
+/* Event listener & Function to hide second popup(search logo popup). */
 document.getElementById("close2").addEventListener("click", function() {
     document.getElementById("open_logo").style.display = "none";
 })
 
+/* Event listener & Function when logo search button is clicked. */
 document.getElementById("search").addEventListener("click", function() {
     var logo_name = document.getElementById("input-select").value;
     logo_name = logo_name.toLowerCase();
     logo_name = logo_name.split(" ").join("+");
     document.getElementById("logo-select").src = `https://logo.clearbit.com/${logo_name}`;
     document.getElementById("logo-select").style.display = "block";
-    
 });
+
 
 document.getElementById("download").addEventListener('click', function() {
     /* html2canvas(document.getElementById("back"), {
