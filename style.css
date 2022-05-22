@@ -2,18 +2,17 @@
     --black: #2c2c2c;
     --red: #db1e36;
     --white: #fff;
-    --max-width: 32rem;
-    --max-height: 18rem;
 }
 
-*, ::before, ::after {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 img {
-    width: 7rem;
+    width: 30vw;
+    height: auto;
 }
 
 h1 {
@@ -38,53 +37,39 @@ p.lead {
 }
 
 i {
-    color: var(--red);
+    color: green;
     font-size: 1.6rem;
 }
 
 body {
     background: var(--black);
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
     color: var(--black);
     font-family: 'Poppins', sans-serif;
     letter-spacing: 1px;
 }
 
 .container {
-    width: var(--max-width);
-    height: var(--max-height);
+    display: flex;
+    flex-direction: column;
     align-items: center;
     align-items: center;
     justify-content: center;
-    margin: 1.6rem auto;
+    top: 0;
 }
+
 #edit {
-    position: absolute;
     background: var(--white);
-    margin: 0 1rem;
+    margin: 1rem 1rem;
     border-radius: 2rem;
     padding: 0.8rem 1.4rem 0.8rem 0.8rem;
     border: none;
-    color: var(--red);
+    color: green;
     cursor: pointer;
     box-shadow: 0 0 10px 1px bisque;
     font-weight: 800;
-}
-
-#download {
-    position: absolute;
     bottom: 0;
     right: 0;
-    background: var(--white);
-    margin: 0 1rem 1rem 0;
-    border-radius: 0.3rem;
-    padding: 0.8rem 1.4rem 0.8rem 0.8rem;
-    border: none;
-    color: var(--red);
-    cursor: pointer;
-    font-weight: 800;
+    position: absolute;
 }
 
 i {
@@ -95,9 +80,8 @@ i {
 
 .container .card {
     background: var(--white);
-    width: 100%;
-    height: 100%;
     box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
+    top: 0;
 }
 .container .card h1 {
     color: black;
@@ -109,9 +93,12 @@ i {
     place-items: center;
     text-transform: uppercase;
     text-align: center;
+    background: white;
+    width: 38vw;
+    height: 22vw;
 }
 .container .card-front .top #logo1, .container .card-back .left .top #logo2 {
-    width: 100px;
+    width: 50px;
 }
 
 
@@ -132,14 +119,14 @@ i {
 }
 
 
-
 .container .card-back {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
+    background: white;
+    width: 38vw;
+    height: 22vw;
 }
 .container .card-back .left {
     display: grid;
@@ -327,9 +314,16 @@ i {
     align-items: center;
     width: 50rem;
     padding: 1rem;
-    display: grid;
-    grid-template-rows: auto auto;
     background-color: var(--black);
+}
+
+.open_logo .column div {
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: row;
 }
 
 .open_logo .column p {
@@ -339,7 +333,6 @@ i {
 }
 .open_logo .column div input {
     border: none;
-    margin: 1rem 0px 0px 0px;
     outline: none;
     width: 30rem;
     height: 2.5rem;
@@ -356,11 +349,11 @@ i {
     cursor: pointer;
     border: none;
     margin-left: 0px;
-    height: 2.5rem;
     outline: none;
     width: 7rem;
     font-weight: 700;
     letter-spacing: 1px;
+    height: 2.5rem;
 }
 .open_logo .column div button:hover {
     color: var(--red);
@@ -373,4 +366,52 @@ i {
     width: 120px;
     cursor: pointer;
     display: none;
+}
+
+
+@media (max-width: 800px) {
+    .popup .row {
+        grid-template-columns: auto;
+    }
+    .popup .row #company_name, .popup .row #website, .popup .row #mobile1, .popup .row #address_line1, .popup .row #name, .popup .row #company_tagline, .popup .row #email, .popup .row #mobile2, .popup .row #address_line2, .popup .row #post {
+        margin: 0.5rem 0.9rem 0.5rem 0.9rem;
+        height: 2rem;
+    }
+    .popup .row {
+        width: 85vw;
+    }
+    .popup #preview {
+        width: 85vw;
+        padding: 0.5rem;
+    }
+    .popup #search-popup {
+        width: 85vw;
+    }
+    .open_logo {
+        width: 100vw;
+    }
+    .open_logo .column{
+        width: 85vw;
+    }
+    .open_logo .column div {
+        width: 100%;
+        flex-direction: column;
+    }
+    .open_logo .column div input{
+        width: 70vw;
+        margin-bottom: 1rem;
+    }
+    .open_logo .column div button {
+        width: 12rem;
+    }
+    #edit {
+        position: relative;
+    }
+    .container .card-front, .container .card-back {
+        width: 95vw;
+        height: 65vw;
+    }
+    img {
+        width: 4rem;
+    }
 }

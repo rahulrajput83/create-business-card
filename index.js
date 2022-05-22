@@ -13,6 +13,8 @@ const address_line2 = document.getElementById("address_line2");
 const yourName = document.getElementById("name");
 const post = document.getElementById("post");
 const preview = document.getElementById("preview");
+const front = document.getElementById("front");
+const back = document.getElementById("back");
 
 
 
@@ -69,14 +71,4 @@ document.getElementById("search").addEventListener("click", function() {
     logo_name = logo_name.split(" ").join("+");
     document.getElementById("logo-select").src = `https://logo.clearbit.com/${logo_name}`;
     document.getElementById("logo-select").style.display = "block";
-});
-
-
-document.getElementById("download").addEventListener('click', function() {
-    /* html2canvas(document.getElementById("back"), {
-        onrendered: function(canvas) {
-            // document.body.appendChild(canvas);
-          return Canvas2Image.saveAsPNG(canvas);
-        }
-    }); */
 });
