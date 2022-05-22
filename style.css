@@ -207,7 +207,6 @@ i {
     top: 0;
     display: none;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
@@ -218,6 +217,7 @@ i {
 
 .popup .row {
     width: 70vw;
+    height: auto;
     display: grid;
     grid-template-columns: auto auto;
     background-color: var(--black);
@@ -409,7 +409,7 @@ i {
     }
     .container .card-front, .container .card-back {
         width: 95vw;
-        height: 65vw;
+        height: 62vw;
     }
     img {
         width: 4rem;
